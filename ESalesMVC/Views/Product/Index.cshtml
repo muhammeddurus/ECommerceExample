@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ESalesDataEntities.Model.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-lg-4 col-md-6 text-center">
+        <div class="single-product-item">
+            <div class="product-image">
+                <a href="single-product.html"><img src="@item.ImageUrlBig" alt=""></a>
+            </div>
+            <h3>@item.Name</h3>
+            <p class="product-price"><span>@item.Price Kg</span> 85$ </p>
+            <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+        </div>
+    </div>
+    }
+    
+   
+</div>
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplier.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUrlBig)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUrlSmall)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+</table>*@
