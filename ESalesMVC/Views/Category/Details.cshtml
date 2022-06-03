@@ -1,0 +1,27 @@
+﻿@model ESalesDataEntities.Model.Category
+@using ESalesBussinessLogicLayer
+@using ESalesDataEntities.Model
+@{
+
+    GenericRepository<Product> proRepo = new GenericRepository<Product>();
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="row">
+    @foreach (var item in proRepo.GetAll().Where(x => x.Category_ID == Model.ID))
+    {
+        <div class="col-lg-4 col-md-6 text-center">
+            <div class="single-product-item">
+                <div class="product-image">
+                    <a href="single-product.html"><img src="@item.ImageUrlBig" alt=""></a>
+                </div>
+                <h3>@item.Name</h3>
+                <p class="product-price"><span>@item.Price Kg</span> 85$ </p>
+                <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+        </div>
+    }
+
+
+</div>
