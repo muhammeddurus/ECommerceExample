@@ -1,5 +1,8 @@
-﻿
+﻿@using ESalesBussinessLogicLayer
+@using ESalesDataAccessLayer.Context
+@using ESalesDataEntities.Model
 @{
+    ESalesBussinessLogicLayer.GenericRepository<Category> categoryRepo = new GenericRepository<Category>();
     Layout = null;
 }
 
@@ -73,13 +76,17 @@
                                 <li>
                                     <a href="#">Kategoriler</a>
                                     <ul class="sub-menu">
-                                        <li><a href="404.html">404 page</a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        @foreach (var item in categoryRepo.GetAll())
+                                        {
+                                            <li><a href="404.html">@item.Name</a></li>
+                                        }
+
+                                        @*<li><a href="about.html">About</a></li>
                                         <li><a href="cart.html">Cart</a></li>
                                         <li><a href="checkout.html">Check Out</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="news.html">News</a></li>
-                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="shop.html">Shop</a></li>*@
                                     </ul>
                                 </li>
                                 <li>
