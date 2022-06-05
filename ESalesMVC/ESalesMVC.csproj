@@ -155,6 +155,7 @@
     <Content Include="assets\js\jquery.meanmenu.min.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\slider.js" />
     <Content Include="assets\js\sticker.js" />
     <Content Include="assets\js\waypoints.js" />
     <Content Include="assets\webfonts\fa-brands-400.svg" />
@@ -226,6 +227,7 @@
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

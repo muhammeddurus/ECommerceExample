@@ -56,6 +56,18 @@
     <Compile Include="Migrations\202206021027268_atak.designer.cs">
       <DependentUpon>202206021027268_atak.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206050759415_image_added.cs" />
+    <Compile Include="Migrations\202206050759415_image_added.designer.cs">
+      <DependentUpon>202206050759415_image_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050803102_image_url_string.cs" />
+    <Compile Include="Migrations\202206050803102_image_url_string.designer.cs">
+      <DependentUpon>202206050803102_image_url_string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050817431_image_last.cs" />
+    <Compile Include="Migrations\202206050817431_image_last.designer.cs">
+      <DependentUpon>202206050817431_image_last.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +84,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202206021027268_atak.resx">
       <DependentUpon>202206021027268_atak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050759415_image_added.resx">
+      <DependentUpon>202206050759415_image_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050803102_image_url_string.resx">
+      <DependentUpon>202206050803102_image_url_string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050817431_image_last.resx">
+      <DependentUpon>202206050817431_image_last.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
