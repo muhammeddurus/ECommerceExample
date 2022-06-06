@@ -1,59 +1,35 @@
-﻿
+﻿@model IEnumerable<ESalesDataEntities.Model.Supplier>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
+@foreach (var item in Model.ToList())
+{
+   
+        <article class="component-item" style="justify-content:center;">
+            <div>
+                <a href="~/Supplier/Details/@item.ID" class="widget widget-big-with-name" data-tracker="seen:homepage-component" data-id="2231421" data-type="widget" data-eventkey="pim_bu_67">
+                    <span class="image-container">
+                        <img width="700" height="300" src="@item.ImageUrl" alt="TRENDYOLMİLLA - Beachwear Büyük Fırsatlar">
+                    </span>
 
-<article class="component-item">
-    <a href="https://www.trendyol.com/sr?cid=607350,607352,607353,607354" class="widget widget-big-with-name" data-tracker="seen:homepage-component" data-id="2231421" data-type="widget" data-eventkey="pim_bu_67">
-        <span class="image-container">
-            <img src="https://cdn.dsmcdn.com/ty445/pimWidgetApi/webBig_20220603070634_2231421TRENDYOLMILLABeachwearBuyukFirsatlar2231421web.jpg" alt="TRENDYOLMİLLA - Beachwear Büyük Fırsatlar">
-        </span>
-        
-        <div class="campaign-summary">
-            <span class="name">
-                TRENDYOLMİLLA - Beachwear Büyük Fırsatlar
-            </span>
-            <span class="hover-text">
-                Alışverişe Başla<i class="icon icon-arrow-banner-white">
-                </i>
-            </span>
-        </div>
-    </a>
-</article>
-<article class="component-item">
-    <a href="https://www.trendyol.com/sr?cid=607350,607352,607353,607354" class="widget widget-big-with-name" data-tracker="seen:homepage-component" data-id="2231421" data-type="widget" data-eventkey="pim_bu_67">
-        <span class="image-container">
-            <img src="https://cdn.dsmcdn.com/ty445/pimWidgetApi/webBig_20220603070634_2231421TRENDYOLMILLABeachwearBuyukFirsatlar2231421web.jpg" alt="TRENDYOLMİLLA - Beachwear Büyük Fırsatlar">
-        </span>
+                    <div class="campaign-summary">
+                        <span class="name">
+                            @item.CompanyName - Beachwear Büyük Fırsatlar
+                        </span>
+                        <span class="hover-text">
+                            Alışverişe Başla<i class="icon icon-arrow-banner-white">
+                            </i>
+                        </span>
+                    </div>
 
-        <div class="campaign-summary">
-            <span class="name">
-                TRENDYOLMİLLA - Beachwear Büyük Fırsatlar
-            </span>
-            <span class="hover-text">
-                Alışverişe Başla<i class="icon icon-arrow-banner-white">
-                </i>
-            </span>
-        </div>
-    </a>
-</article>
-<article class="component-item">
-    <a href="https://www.trendyol.com/sr?cid=607350,607352,607353,607354" class="widget widget-big-with-name" data-tracker="seen:homepage-component" data-id="2231421" data-type="widget" data-eventkey="pim_bu_67">
-        <span class="image-container">
-            <img src="https://cdn.dsmcdn.com/ty445/pimWidgetApi/webBig_20220603070634_2231421TRENDYOLMILLABeachwearBuyukFirsatlar2231421web.jpg" alt="TRENDYOLMİLLA - Beachwear Büyük Fırsatlar">
-        </span>
+                
 
-        <div class="campaign-summary">
-            <span class="name">
-                TRENDYOLMİLLA - Beachwear Büyük Fırsatlar
-            </span>
-            <span class="hover-text">
-                Alışverişe Başla<i class="icon icon-arrow-banner-white">
-                </i>
-            </span>
-        </div>
-    </a>
-</article>
+                </a>
+            </div>
+        </article>
+    
+}
+
 

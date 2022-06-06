@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ESalesBussinessLogicLayer;
+using ESalesDataEntities.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +11,10 @@ namespace ESalesMVC.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        GenericRepository<Supplier> catRepo = new GenericRepository<Supplier>();
         public ActionResult Index()
         {
-            return View();
+            return View(catRepo.GetAll());
         }
     }
 }

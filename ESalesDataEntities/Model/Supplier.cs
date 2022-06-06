@@ -12,6 +12,7 @@ namespace ESalesDataEntities.Model
         [Key]
         public int ID { get; set; }
         public string CompanyName { get; set; }
+        public string ImageUrl { get; set; }
         public virtual ICollection<Product> Products { get; set; }
     }
 }

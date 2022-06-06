@@ -1,0 +1,42 @@
+﻿@model ESalesDataEntities.Model.Supplier
+@using ESalesBussinessLogicLayer
+@using ESalesDataEntities.Model
+@{
+    GenericRepository<Product> proRepo = new GenericRepository<Product>();
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+
+@*@foreach (var item in proRepo.GetAll().Where(x => x.ID == Model.ID).ToList())
+    {
+        foreach (var proitem in item.ProductImages.ToList())
+        {
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="@proitem.ImageUrl.ToString()" alt="First slide">
+            </div>
+        }
+    }*@
+
+
+@*---------------------------------------*@
+<div class="row">
+    @foreach (var item in proRepo.GetAll().Where(x => x.Supplier_ID == Model.ID))
+    {
+        <div class="col-lg-4 col-md-6 text-center">
+            <div class="single-product-item">
+                <div class="product-image">
+                    <a href="~/Product/Details/@item.ID"><img src="@item.ImageUrlBig" alt=""></a>
+                </div>
+                <h3>@item.Name</h3>
+                <p class="product-price"><span>@item.Quantity </span>@item.Price$ </p>
+
+                <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+            </div>
+        </div>
+    }
+
+
+</div>
