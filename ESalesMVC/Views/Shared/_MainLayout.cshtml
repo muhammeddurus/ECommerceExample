@@ -1,8 +1,9 @@
 ﻿@using ESalesBussinessLogicLayer
 @using ESalesDataAccessLayer.Context
 @using ESalesDataEntities.Model
+@using ESalesDataAccessLayer.Context
 @{
-    ESalesBussinessLogicLayer.GenericRepository<Category> categoryRepo = new GenericRepository<Category>();
+    ESalesBussinessLogicLayer.GenericRepository<Category, Context> categoryRepo = new GenericRepository<Category, Context>();
     Layout = null;
 }
 
@@ -42,7 +43,7 @@
     <link rel="stylesheet" href="~/assets/css/main.css">
     <!-- responsive -->
     <link rel="stylesheet" href="~/assets/css/responsive.css">
-
+    <link href="~/assets/css/login.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -112,7 +113,7 @@
                                 </li>
                                 <li>
                                     <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+                                        <a class="shopping-cart" href="~/Login/Index"><i class="fa-solid fa-right-to-bracket"></i></a>
                                         <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                     </div>

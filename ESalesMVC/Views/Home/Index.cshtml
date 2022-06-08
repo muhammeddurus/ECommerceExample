@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
+   
 }
 
 @foreach (var item in Model.ToList())
@@ -16,7 +17,7 @@
 
                     <div class="campaign-summary">
                         <span class="name">
-                            @item.CompanyName - Beachwear Büyük Fırsatlar
+                            @item.CompanyName - @Session["UserInformation"].ToString() Büyük Fırsatlar
                         </span>
                         <span class="hover-text">
                             Alışverişe Başla<i class="icon icon-arrow-banner-white">

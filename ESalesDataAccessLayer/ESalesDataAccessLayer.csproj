@@ -72,6 +72,10 @@
     <Compile Include="Migrations\202206061027359_supplier_imageUrlColumn_added.designer.cs">
       <DependentUpon>202206061027359_supplier_imageUrlColumn_added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206071024545_customer_passwordcolumn_added.cs" />
+    <Compile Include="Migrations\202206071024545_customer_passwordcolumn_added.designer.cs">
+      <DependentUpon>202206071024545_customer_passwordcolumn_added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206061027359_supplier_imageUrlColumn_added.resx">
       <DependentUpon>202206061027359_supplier_imageUrlColumn_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071024545_customer_passwordcolumn_added.resx">
+      <DependentUpon>202206071024545_customer_passwordcolumn_added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

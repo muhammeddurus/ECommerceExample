@@ -112,6 +112,7 @@
     <Content Include="assets\css\meanmenu.min.css" />
     <Content Include="assets\css\owl.carousel.css" />
     <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\login.css" />
     <Content Include="assets\css\scss\pages\_404.css" />
     <Content Include="assets\img\1.jpg" />
     <Content Include="assets\img\a.jpg" />
@@ -166,8 +167,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
@@ -230,6 +233,7 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Supplier\Details.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -240,6 +244,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ESalesBussinessLogicLayer\ESalesBussinessLogicLayer.csproj">

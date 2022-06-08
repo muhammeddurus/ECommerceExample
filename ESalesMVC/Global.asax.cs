@@ -14,5 +14,6 @@ namespace ESalesMVC
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+        
     }
 }

@@ -1,9 +1,11 @@
 ﻿@model ESalesDataEntities.Model.Category
 @using ESalesBussinessLogicLayer
 @using ESalesDataEntities.Model
+@using ESalesDataAccessLayer.Context
 @{
 
-    GenericRepository<Product> proRepo = new GenericRepository<Product>();
+
+    GenericRepository<Product,Context> proRepo = new GenericRepository<Product,Context>();
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }

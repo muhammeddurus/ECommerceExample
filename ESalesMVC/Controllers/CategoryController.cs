@@ -1,4 +1,5 @@
 ﻿using ESalesBussinessLogicLayer;
+using ESalesDataAccessLayer.Context;
 using ESalesDataEntities.Model;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace ESalesMVC.Controllers
 {
     public class CategoryController : Controller
     {
-        GenericRepository<Category> catRepo = new GenericRepository<Category>();
+        GenericRepository<Category,Context> catRepo = new GenericRepository<Category,Context>();
         // GET: Category
         public ActionResult Index()
         {

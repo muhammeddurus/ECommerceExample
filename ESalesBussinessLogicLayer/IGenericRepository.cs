@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ESalesBussinessLogicLayer
 {
-    public interface IGenericRepository<T>
+    public interface IGenericRepository<T> 
     {
         List<T> GetAll();
         T GetById(int itemId);

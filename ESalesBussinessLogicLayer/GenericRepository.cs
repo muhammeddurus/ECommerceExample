@@ -1,55 +1,78 @@
 ﻿using ESalesDataAccessLayer.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ESalesBussinessLogicLayer
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T:class
+    public class GenericRepository<T, TContext> : IGenericRepository<T> 
+        where T : class, new()
+        where TContext : Context, new()
     {
-        Context db = new Context();
-        
+
+
         public GenericRepository()
         {
 
         }
-        
+
 
         public void Delete(int itemId)
         {
-            
-            T silinecek = db.Set<T>().Find(itemId);
-            db.Set<T>().Remove(silinecek);
-            db.SaveChanges();
-
+            using (var context = new Context())
+            {
+                T silinecek = context.Set<T>().Find(itemId);
+                context.Set<T>().Remove(silinecek);
+                context.SaveChanges();
+            }
         }
 
         public List<T> GetAll()
         {
+            using (var context = new Context())
+            {
+                
+                return context.Set<T>().ToList();
+            }
             
-            return db.Set<T>().ToList();
         }
 
         public T GetById(int itemId)
         {
-            return db.Set<T>().Find(itemId);
+            using (var context = new Context())
+            {
+
+                return context.Set<T>().Find(itemId);
+            }
+          
         }
 
         public void Insert(T item)
         {
-            db.Set<T>().Add(item);
-            db.SaveChanges();
+            using (var context = new Context())
+            {
+
+                context.Set<T>().Add(item);
+                context.SaveChanges();
+            }
+            
         }
 
         public void Update(T item)
         {
-            db.Set<T>().Attach(item);
-            db.Entry(item).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
+            using (var context = new Context())
+            {
+
+                context.Set<T>().Attach(item);
+                context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+           
         }
-        
+
 
 
     }
