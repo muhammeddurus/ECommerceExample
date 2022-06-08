@@ -87,11 +87,11 @@
                                         }
 
                                         @*<li><a href="about.html">About</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Check Out</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="shop.html">Shop</a></li>*@
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Check Out</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="news.html">News</a></li>
+                                            <li><a href="shop.html">Shop</a></li>*@
                                     </ul>
                                 </li>
                                 <li>
@@ -113,13 +113,33 @@
                                 </li>
                                 <li>
                                     <div class="header-icons">
-                                        <a class="shopping-cart" href="~/Login/Index"><i class="fa-solid fa-right-to-bracket"></i></a>
                                         <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                                        @if (Session["UserInformation"] != null)
+                                        {
+                                            <a class="shopping-cart" href="~/Login/Index">
+                                                <i class="fa-solid fa-user"></i>
+                                                <ul class="sub-menu">
+                                                    <li><a href="shop.html">Shop</a></li>
+                                                    <li><a href="checkout.html">Check Out</a></li>
+                                                    <li><a href="single-product.html">Single Product</a></li>
+                                                    <li><a href="cart.html">Cart</a></li>
+                                                </ul>
+                                            </a>
+
+                                        }
+                                        @if (Session["UserInformation"] == null)
+                                        {
+                                            <a class="shopping-cart" href="~/Login/Index"><i class="fa-solid fa-right-to-bracket"></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a class="shopping-cart" href="~/Login/Index"><i class="fa-solid fa-circle-xmark"></i></a>
+                                        }
                                     </div>
                                 </li>
                             </ul>
-                        </nav>                    
+                        </nav>
                         <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                         <div class="mobile-menu"></div>
                         <!-- menu end -->
@@ -162,7 +182,6 @@
     </div>
     <!-- end breadcrumb section -->
     <!-- featured section -->
-    
     <!-- end featured section -->
     <!-- shop banner -->
     <!-- end shop banner -->
