@@ -13,7 +13,7 @@ namespace ESalesBussinessLogicLayer
         where TContext : Context, new()
     {
 
-
+        Context context = new Context();
         public GenericRepository()
         {
 
@@ -22,54 +22,49 @@ namespace ESalesBussinessLogicLayer
 
         public void Delete(int itemId)
         {
-            using (var context = new Context())
-            {
+            
                 T silinecek = context.Set<T>().Find(itemId);
                 context.Set<T>().Remove(silinecek);
                 context.SaveChanges();
-            }
+            
         }
 
         public List<T> GetAll()
         {
-            using (var context = new Context())
-            {
+            
                 
                 return context.Set<T>().ToList();
-            }
+            
             
         }
 
         public T GetById(int itemId)
         {
-            using (var context = new Context())
-            {
+          
 
                 return context.Set<T>().Find(itemId);
-            }
+            
           
         }
 
         public void Insert(T item)
         {
-            using (var context = new Context())
-            {
+            
 
                 context.Set<T>().Add(item);
                 context.SaveChanges();
-            }
+            
             
         }
 
         public void Update(T item)
         {
-            using (var context = new Context())
-            {
+          
 
                 context.Set<T>().Attach(item);
                 context.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
-            }
+            
            
         }
 

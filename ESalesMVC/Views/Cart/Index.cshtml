@@ -1,0 +1,22 @@
+﻿@using ESalesMVC.Models
+@using ESalesDataAccessLayer.Context
+@using ESalesDataEntities.Model
+@using ESalesBussinessLogicLayer
+@{
+    GenericRepository<Product, Context> proRepo = new GenericRepository<Product, Context>();
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@foreach (var item in proRepo.GetAll())
+{
+    foreach (var items in AddToCartProduct.Products)
+    {
+        if (items.ID == item.ID)
+        {
+            <label>@item.Name</label>
+        }
+    }
+
+}
+

@@ -1,6 +1,7 @@
 ﻿using ESalesBussinessLogicLayer;
 using ESalesDataAccessLayer.Context;
 using ESalesDataEntities.Model;
+using ESalesMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,6 +94,16 @@ namespace ESalesMVC.Controllers
                 return HttpNotFound();
             }
             return View(product);
+        }
+
+        [HttpPost]
+        public ActionResult Details(int id)
+        {
+            Product product = proRepo.GetById(id);
+            AddToCartProduct.Products.Add(product);
+
+               
+            return RedirectToAction("Index");
         }
     }
 }

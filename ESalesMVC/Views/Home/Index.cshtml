@@ -17,7 +17,12 @@
 
                     <div class="campaign-summary">
                         <span class="name">
-                            @item.CompanyName - @Session["UserInformation"].ToString() Büyük Fırsatlar
+                            @item.CompanyName - 
+                            @if (Session["UserInformation"] != null)
+                            {
+                                @Session["UserInformation"].ToString()
+                            }
+                             Büyük Fırsatlar
                         </span>
                         <span class="hover-text">
                             Alışverişe Başla<i class="icon icon-arrow-banner-white">
